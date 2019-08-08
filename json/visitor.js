@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var count = 0;
-class Visitor {
+module.exports=class Visitor {
   constructor ( name,surname, date, time, assistant, comments){
       this.name = name ;
       this.surname = surname;
@@ -30,6 +30,3 @@ class Visitor {
        console.log(file);
      });
 }}
-let nothemba= new Visitor("Nothemba","Tsheme","234577","12","good","bonga");
-nothemba.save();
-nothemba.load(1)
