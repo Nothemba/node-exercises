@@ -30,6 +30,3 @@ module.exports = class Visitor {
        console.log(file);
      });
 }}
-let nothemba= new Visitor("Nothemba","Tsheme","234577","12","good","bonga");
-nothemba.save();
-nothemba.load(1)
