@@ -1,8 +1,6 @@
 
-
-var fs = require('fs');
 var count = 0;
-module.exports=class Visitor {
+ class Visitor {
   constructor ( name,surname, date, time, assistant, comments){
       this.name = name ;
       this.surname = surname;
@@ -16,17 +14,22 @@ module.exports=class Visitor {
       count += 1;
   }
   save() {
+    var fs = require('fs');
     this.Count();
     let file = JSON.stringify(this,null,2);
-    fs.writeFile("visitor_" + count,file , function (err) {
+    fs.writeFile("visitor_"+ count +".json" ,file , function (err) {
        if(err)  throw err;
-        console.log("File was saved")  
        
-   });
+      });
+      return "File was saved" 
   }
   load(i) {
-      fs.readFile("./visitor_" + i, "utf8",(err, file) => {
+    var fs = require('fs');
+      fs.readFile("./visitor_" + i + ".json" , "utf8",(err, file) => {
        if (err) throw err;
-       console.log(file);
+       return file;
+       
      });
+     
 }}
+module.exports = Visitor;
